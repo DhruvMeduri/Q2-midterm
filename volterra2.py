@@ -11,7 +11,7 @@ for i in range(2,100000):
 
 #Now we implement an MLP with 6 input nodes, 16 hidden neurons and 1 output neuron
 # 'a' is a 7X16 matrix(including bias) and 'b' is a 17X1 matrix(including bias)
-'''
+
 a = np.random.rand(7,16)
 b = np.random.rand(17,1)
 a_list = [a,a]
@@ -61,9 +61,7 @@ for epoch in range(2500):
                 b[r][c] = b[r][c] + ((b_list[count][r][c] - b_list[count-1][r][c])*alpha) + learn*output_loc_grad*hidden_activation[r]#includes the momentum term
         a_list.append(a)
         b_list.append(b)
-    # compute variance and plot Error
-    #print("Matrix A: ",a)
-    #print("Matrix B:", b)
+    # compute variance plot and plot MSE
     if epoch % 50 == 0:
         print(epoch)
         var1 = []
@@ -104,7 +102,10 @@ plt.xlabel("Epochs")
 plt.ylabel("MSE")
 plt.title("Error Trajectory")
 plt.show()
+
 '''
+
+# this is for the cross validation
 a = np.random.rand(7,16)
 b = np.random.rand(17,1)
 a_list = [a,a]
@@ -183,3 +184,4 @@ plt.xlabel("Epochs")
 plt.ylabel("MSE")
 plt.title("Error Trajectory-Cross Validation")
 plt.show()
+'''
